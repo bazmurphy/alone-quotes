@@ -163,28 +163,33 @@ const database = [
    }
  ]
 
+function getAndRenderNewQuote() {
+  // console.log(database);
+  // console.log(database.length);
 
-// console.log(database);
-// console.log(database.length);
+  const randomSeasonIndexNumber = Math.floor(Math.random() * database.length);
+  // console.log(randomSeasonIndexNumber);
 
-const randomSeasonIndexNumber = Math.floor(Math.random() * database.length);
-// console.log(randomSeasonIndexNumber);
+  const randomSeasonQuoteIndexNumber = Math.floor(Math.random() * database[randomSeasonIndexNumber].seasonQuotes.length);
+  // console.log(randomSeasonQuoteIndexNumber);
 
-const randomSeasonQuoteIndexNumber = Math.floor(Math.random() * database[randomSeasonIndexNumber].seasonQuotes.length);
-// console.log(randomSeasonQuoteIndexNumber);
+  const randomQuoteAndAuthor = database[randomSeasonIndexNumber].seasonQuotes[randomSeasonQuoteIndexNumber];
+  // console.log(randomQuoteAndAuthor);
 
-const randomQuoteAndAuthor = database[randomSeasonIndexNumber].seasonQuotes[randomSeasonQuoteIndexNumber];
-// console.log(randomQuoteAndAuthor);
+  const [randomQuote, randomQuoteAuthor] = randomQuoteAndAuthor.split(" - ");
+  // console.log(randomQuote);
+  // console.log(randomQuoteAuthor);
 
-const [randomQuote, randomQuoteAuthor] = randomQuoteAndAuthor.split(" - ");
-// console.log(randomQuote);
-// console.log(randomQuoteAuthor);
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+  const infoElement = document.getElementById("info");
 
-const quoteElement = document.getElementById("quote");
-const authorElement = document.getElementById("author");
-const infoElement = document.getElementById("info");
+  quoteElement.innerText = `"${randomQuote}"`;
+  authorElement.innerText = `- ${randomQuoteAuthor}`;
+  infoElement.innerText = `Season ${randomSeasonIndexNumber + 1} Episode ${randomSeasonQuoteIndexNumber + 1}`;
+}
 
-quoteElement.innerText = `"${randomQuote}"`;
-authorElement.innerText = `- ${randomQuoteAuthor}`;
-infoElement.innerText = `Season ${randomSeasonIndexNumber + 1} Episode ${randomSeasonQuoteIndexNumber + 1}`;
+const buttonElement = document.getElementById("button");
+buttonElement.addEventListener("click", getAndRenderNewQuote);
 
+getAndRenderNewQuote();

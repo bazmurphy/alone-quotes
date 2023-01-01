@@ -13,6 +13,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
   background-color: hsla(0, 0%, 15%, 1);
 }
@@ -44,19 +45,22 @@ body {
 
 @media (min-width: 600px) {
   #container {
-    max-width: 600px;
+    max-width: none;
+    width: 600px;
   }
 }
 
 @media (min-width: 700px) {
   #container {
-    max-width: 700px;
+    max-width: none;
+    width: 700px;
   }
 }
 
 @media (min-width: 800px) {
   #container {
-    max-width: 800px;
+    max-width: none;
+    width: 800px;
   }
 }
 
@@ -90,4 +94,12 @@ body {
   font-family: sans-serif;
   color: hsla(0, 0%, 90%, 1);
   font-size: 12px;
+}
+
+#button {
+  color: hsla(0, 0%, 90%, 1);
+  background-color: hsla(0, 0%, 15%, 1);
+  border: 1px solid hsla(0, 0%, 90%, 1);
+  border-radius: 6px;
+  cursor: pointer;
 }
