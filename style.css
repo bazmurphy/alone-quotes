@@ -1,0 +1,75 @@
+
+@font-face {
+  font-family: "Coelcanth Caption Bold";
+  src: url("coelacanth-caption-bold.woff") format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: hsla(0, 0%, 15%, 1);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 350px;
+
+  padding: 100px 60px;
+
+  border: 1px solid black;
+  border-radius: 20px;
+
+  background-image: url("background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 600px) {
+  #container {
+    width: 700px;
+    min-height: 500px;
+  }
+}
+
+#quote-container {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Coelcanth Caption Bold";
+  text-shadow: 1px 1px 1px black;
+}
+
+#quote {
+  color: hsla(0, 0%, 90%, 1);
+  font-size: 34px;
+}
+
+#author {
+  align-self: flex-end;
+
+  padding-top: 20px;
+
+  color: hsla(0, 0%, 90%, 1);
+  font-size: 26px;
+}
+
+#info {
+  align-self: flex-end;
+
+  padding-top: 20px;
+  
+  font-family: sans-serif;
+  color: hsla(0, 0%, 90%, 1);
+  font-size: 12px;
+}
